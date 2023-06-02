@@ -21,6 +21,7 @@ body {
   height: 56px;
   padding: 10px;
 }
+
 #single_room {
   height: calc(100vh - 150px);
 }
@@ -37,15 +38,14 @@ body {
 }
 
 #side_panel {
-  height: 100vh;
+  height: calc(100vh - 55px);
   margin-right: 0px !important;
   overflow-x: hidden;
   overflow-y: scroll;
   margin-bottom: 55px;
 }
-
 #chatroom_container {
-  height: 100v;
+  height: 100vh;
   margin-right: 0px !important;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -55,7 +55,6 @@ body {
   width: 80%;
   margin-right: 5px;
 }
-
 .message-box {
   word-wrap: break-word;
   width: fit-content;
@@ -64,5 +63,59 @@ body {
   border-radius: 10px;
   margin-bottom: 10px;
   background-color: #555555;
+}
+
+.user_row {
+  height: 50px;
   padding: 10px;
+  border-bottom: 1px solid #555555;
+}
+
+.username {
+  overflow: hidden;
+}
+
+.chat_pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user_list_item {
+  height: 55px;
+  background-color: #343a40 !important;
+}
+.room_list_item {
+  height: 55px;
+  background-color: #343a40 !important;
+  color: #fff;
+}
+
+.name {
+  margin-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.time {
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.status-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: grey;
+  border: 2px solid white;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
 }
