@@ -21,7 +21,9 @@ class RoomsController < ApplicationController
     @rooms = Room.public_rooms
 
     @message = Message.new
-    @messages = @single_room.messages.order(created_at: :asc)
+    # @messages = @single_room.messages.order(created_at: :asc)
+
+    pagy_messages = @single_room.messages.order(created_at: :desc)
 
 
     @users = User.all_except(current_user)
