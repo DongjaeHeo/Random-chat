@@ -18,6 +18,11 @@ export default class extends Controller {
       const reader = new FileReader();
       this.createAndDisplayFilePreviewElements(file, reader);
     }
+    this.toggleVisibility();
+  }
+  toggleVisibility() {
+    let preview = document.getElementById("attachment-previews");
+    preview.classList.toggle("d-none");
   }
 
   /**
@@ -187,11 +192,17 @@ export default class extends Controller {
     target.parentNode.removeChild(target);
     filesArray.forEach((file) => dataTransfer.items.add(file));
     fileInput.files = dataTransfer.files;
+
+    if (filesArray.length === 0) {
+      this.toggleVisibility();
+    }
   }
   /**
    * Claer all the previe element after submit
    */
   clearPreviews() {
     document.getElementById("attachment-previews").innerHTML = "";
+    let preview = document.getElementById("attachment-previews");
+    preview.classList.add("d-none");
   }
 }

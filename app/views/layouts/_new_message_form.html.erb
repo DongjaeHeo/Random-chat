@@ -2,7 +2,8 @@
   <%= form_with(model: [@single_room, @message], remote:true, class:'d-flex',
   data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }) do |f| %>
       <div id="attachment-previews"
-       data-controller="message-preview"
+        class="d-none"
+        data-controller="message-preview"
         data-action="message-preview#preview">
       </div>
       <div class="image-upload">
@@ -18,5 +19,6 @@
         controller: "message-preview",
         action: "click->message-preview#clearPreviews"},
         class: 'btn btn-primary' %>
+      </div>
   <% end %>
 </div>

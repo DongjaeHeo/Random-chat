@@ -24,6 +24,9 @@ class RoomsController < ApplicationController
     # @messages = @single_room.messages.order(created_at: :asc)
 
     pagy_messages = @single_room.messages.order(created_at: :desc)
+    @pagy, messages = pagy(pagy_messages, items: 30)
+
+    @messages = messages.reverse
 
 
     @users = User.all_except(current_user)
