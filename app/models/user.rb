@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :messages
   has_one_attached :avatar
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   enum status: %i[offline away online]
 
   after_commit :add_default_avatar, on: %i[create update]
